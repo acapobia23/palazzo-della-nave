@@ -39,3 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 5000); // ← Mancava questo parametro per l'intervallo di 5 secondi
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  function scaleCards() {
+    const cards = document.querySelectorAll('.grid-item, .bott-grid-item');
+    const scale = window.innerWidth > 1200 ? 1.05 : 1;
+
+    cards.forEach(card => {
+      card.style.transform = `scale(${scale})`;
+    });
+  }
+
+  window.addEventListener('resize', scaleCards);
+  scaleCards(); // chiamata iniziale
+});
+
+

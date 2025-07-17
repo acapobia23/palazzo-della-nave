@@ -261,27 +261,6 @@ h1, h2, h3, h4, h5, h6, a, button {
   vertical-align: middle;
 }
 
-/* === Responsive === */
-@media (max-width: 600px) {
-  body {
-    padding: 12px;
-  }
-
-  .container {
-    padding: 0 12px;
-    max-width: 100%;
-  }
-
-  .section-title {
-    font-size: 1.2rem;
-  }
-
-  .booking-form {
-    padding: 15px;
-  }
-}
-
-
 /* === Pickaday Theme  === */
 
 /* Header: mese + anno */
@@ -351,6 +330,51 @@ h1, h2, h3, h4, h5, h6, a, button {
   max-height: 40px;
   width: auto;
   vertical-align: middle;
+}
+
+
+/* === Responsive === */
+
+@media (min-width: 1000px) {
+  .zoom-wrapper {
+    transform: scale(1.5);
+    transform-origin: top left;
+    width: 66.66%; /* 100 / 1.5 per evitare overflow orizzontale */
+  }
+
+  .banner {
+    width: 100%; /* Larghezza: 100% della viewport */
+    height: 500px;
+    background-image: url('../assets/img/headers/wdl-onlylogo.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover; /* Mostra l'immagine intera */
+    background-attachment: scroll; /* Parallax disattivato */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    border-radius: 0 0 4.2% 4.2%;
+    overflow: hidden;
+    transition: all 0.8s ease-in-out;
+    position: relative;
+  }
+
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 0 12px;
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .booking-form {
+    padding: 15px;
+  }
 }
 
 

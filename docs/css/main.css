@@ -118,14 +118,14 @@
   
   
   /* touch mobile */
-  .grid-item:active {
+  /* .grid-item:active {
     transform: scale(0.97);
     background-color: #e6f9f8;
   }
   
   .grid-item:hover {
     transform: scale(1.03);
-  }
+  } */
   
   .grid-item img {
     width: 50px;
@@ -249,5 +249,33 @@
   color: #3BD2C9;
   font-style: italic;
 }
+
+
+/*per pc*/
+@media (min-width: 1000px) {
+  .zoom-wrapper {
+    transform: scale(1.5);
+    transform-origin: top left;
+    width: 66.66%; /* 100 / 1.5 per evitare overflow orizzontale */
+  }
+  .banner {
+    width: 100%; /* Larghezza: 100% della viewport */
+    height: 600px;
+    background-image: url('../assets/img/headers/empty-gohomes.webp');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover; /* Mostra l'immagine intera */
+    background-attachment: scroll; /* Parallax disattivato */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    border-radius: 0 0 4.2% 4.2%;
+    overflow: hidden;
+    transition: all 0.8s ease-in-out;
+    position: relative;
+  }
+}
+
+
 
   
