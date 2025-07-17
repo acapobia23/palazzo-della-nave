@@ -16,7 +16,7 @@ function handleCardClick(card) {
 // banner che scorre
 
 document.addEventListener('DOMContentLoaded', () => {
-  const bannerImg = document.getElementById('banner-img');
+  const bannerImg = document.querySelector('.banner');
 
   const images = [
     'assets/img/headers/wdl-onlylogo.jpg',
@@ -36,21 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
       bannerImg.style.backgroundImage = `url('${images[index]}')`;
       bannerImg.style.opacity = 1;
     }, 500);
-  }, 5000); // ← Mancava questo parametro per l'intervallo di 5 secondi
+  }, 5000); 
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  function scaleCards() {
-    const cards = document.querySelectorAll('.grid-item, .bott-grid-item');
-    const scale = window.innerWidth > 1200 ? 1.05 : 1;
-
-    cards.forEach(card => {
-      card.style.transform = `scale(${scale})`;
-    });
-  }
-
-  window.addEventListener('resize', scaleCards);
-  scaleCards(); // chiamata iniziale
-});
 
 

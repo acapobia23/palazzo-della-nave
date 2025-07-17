@@ -59,26 +59,31 @@
 
 /* Variazione alternativa dell'ink drop con colore */
 .banner.ink-drop-colored::before {
-  background: radial-gradient(circle, rgba(74, 144, 226, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  transform: translate(-100%, -50%); /* inizia completamente a sinistra */
 }
 
-/* Effetto ink drop al click */
+/* Attiva l'effetto */
 .banner.ink-drop-click::before {
-  animation: inkDrop 0.6s ease-out;
+  animation: inkDropSide 0.8s ease-out;
 }
 
-@keyframes inkDrop {
+@keyframes inkDropSide {
   0% {
     width: 0;
-    height: 0;
-    opacity: 0.8;
+    height: 100px;
+    opacity: 0.4;
+    transform: translate(-100%, -50%);
   }
   100% {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 100px;
     opacity: 0;
+    transform: translate(0, -50%);
   }
 }
+
+
   
   .grid-item {
     height: 100%; /* prende sempre tutta l'altezza disponibile dal .col */
@@ -251,31 +256,19 @@
 }
 
 
-/*per pc*/
+/* Media query per grandi schermi */
 @media (min-width: 1000px) {
   .zoom-wrapper {
     transform: scale(1.5);
     transform-origin: top left;
     width: 66.66%; /* 100 / 1.5 per evitare overflow orizzontale */
   }
+
   .banner {
-    width: 100%; /* Larghezza: 100% della viewport */
-    height: 600px;
-    background-image: url('../assets/img/headers/empty-gohomes.webp');
-    background-repeat: no-repeat;
+    height: 375px; /* 250 * 1.5 per mantenere proporzioni */
+    background-image: url('../assets/img/headers/wdl-onlylogo-pc-visual.jpg');
     background-position: center top;
-    background-size: cover; /* Mostra l'immagine intera */
-    background-attachment: scroll; /* Parallax disattivato */
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    border-radius: 0 0 4.2% 4.2%;
-    overflow: hidden;
-    transition: all 0.8s ease-in-out;
-    position: relative;
+    background-attachment: scroll; /* disabilita parallax per PC */
   }
+
 }
-
-
-
-  
