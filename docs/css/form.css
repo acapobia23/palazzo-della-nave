@@ -5,7 +5,7 @@ body {
   background: #fff;
   margin: 0;
   line-height: 1.6;
-  padding-top: 80px;
+  padding-top: 0px;
 }
 
 h1, h2, h3, h4, h5, h6, a, button {
@@ -14,6 +14,80 @@ h1, h2, h3, h4, h5, h6, a, button {
   background: #fff;
   margin: 0;
   line-height: 1.6;
+}
+
+.banner {
+  background: url('../assets/img/headers/wdl-onlylogo.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center bottom;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  border-radius: 0 0 4.2% 4.2%;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, background-position 0.8s ease-in-out;
+  overflow: hidden;
+  opacity: 1;
+  position: relative;
+  
+  /* Effetto Parallax */
+  background-attachment: fixed;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Effetto Parallax al scroll */
+.banner.parallax {
+  transform: translate3d(0, calc(var(--scroll-y) * -0.5px), 0);
+}
+
+/* Effetto Ink Drop */
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.banner:hover::before {
+  width: 300px;
+  height: 300px;
+  opacity: 1;
+}
+
+/* Variazione alternativa dell'ink drop con colore */
+.banner.ink-drop-colored::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  transform: translate(-100%, -50%); /* inizia completamente a sinistra */
+}
+
+/* Attiva l'effetto */
+.banner.ink-drop-click::before {
+  animation: inkDropSide 0.8s ease-out;
+}
+
+@keyframes inkDropSide {
+  0% {
+    width: 0;
+    height: 100px;
+    opacity: 0.4;
+    transform: translate(-100%, -50%);
+  }
+  100% {
+    width: 300px;
+    height: 100px;
+    opacity: 0;
+    transform: translate(0, -50%);
+  }
 }
 
 /* === header logo === */
@@ -44,7 +118,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 /* === Headings === */
