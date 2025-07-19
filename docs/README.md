@@ -19,3 +19,13 @@ stack tecnologico:HTML, CSS, JS, Bootstrap
 cd generale/;git add .;git commit -m "update";git push;cd ../palazzo-nave/;git add .;git commit -m "update";git push;cd ../velonis/;git add .;git commit -m "update";git push;cd ../
 
 ---
+
+**Case for cookie e GDPR for Privacy & Policy**  
+
+
+| Caso                                    | Obbligo di registrare consenso | Note                               |
+| --------------------------------------- | ------------------------------ | ---------------------------------- |
+| Sito senza memorizzazione dati          | No                             | Basta checkbox obbligatoria        |
+| Sito con raccolta dati e memorizzazione | Sì                             | Devi conservare prova del consenso |
+
+        

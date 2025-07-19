@@ -154,3 +154,57 @@ document.addEventListener("DOMContentLoaded", () => {
     lastY = y;
   });
 });
+
+/* === License JS link flaticon scomparsa === */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById("toggle-attribution");
+  const box = document.getElementById("attribution-box");
+  const source = document.getElementById("flaticon-links");
+  const arrowIcon = document.getElementById("arrow-icon");
+  const toggleText = document.getElementById("toggle-text");
+
+  toggleBtn.addEventListener("click", function () {
+  const isVisible = box.offsetParent !== null;
+
+    // Carico il contenuto solo la prima volta che mostro il box
+    if (!isVisible && box.innerHTML.trim() === "") {
+      box.innerHTML = source.innerHTML;
+    }
+
+    // Alterno visibilità del box
+    box.style.display = isVisible ? "none" : "block";
+
+    // Cambio testo del bottone in base allo stato
+    toggleText.textContent = isVisible
+      ? "Show icon credits"
+      : "Hide source links";
+
+    // Cambio la classe della freccia per ruotarla
+    arrowIcon.classList.remove("arrow-up", "arrow-down");
+    arrowIcon.classList.add(isVisible ? "arrow-down" : "arrow-up");
+  });
+});
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const toggleBtn = document.getElementById("toggle-attribution");
+//   const box = document.getElementById("attribution-box");
+//   const source = document.getElementById("flaticon-links");
+
+//   toggleBtn.addEventListener("click", function () {
+//     const isVisible = box.style.display === "block";
+
+//     if (!isVisible) {
+//       // Se il box è vuoto, inserisco i link da #flaticon-links
+//       if (box.innerHTML.trim() === "") {
+//         box.innerHTML = source.innerHTML;
+//       }
+//     }
+
+//     box.style.display = isVisible ? "none" : "block";
+//     toggleBtn.textContent = isVisible
+//       ? "Mostra dettagli attribuzione"
+//       : "Nascondi dettagli attribuzione";
+//   });
+// });
+
