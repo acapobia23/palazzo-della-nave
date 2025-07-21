@@ -469,8 +469,97 @@ h1, h2, h3, h4, h5, h6, a, button {
   transform: rotate(180deg);
 }
 
+/* CHECK-BOX */
 
+/* Contenitore */
+.booking-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+}
 
+/* Nascondi checkbox reale */
+.booking-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* Box visuale tondo */
+.booking-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3BD2C9;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+/* Spunta ✔ quando selezionato */
+.booking-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  font-size: 14px;
+  color: #3BD2C9;
+  font-weight: bold;
+}
+
+/* Testo linkato */
+.booking-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+/* Nascondi checkbox reale */
+.booking-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* Box visuale tondo */
+.booking-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3BD2C9;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+/* Spunta ✔ quando selezionato */
+.booking-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  font-size: 14px;
+  color: #3BD2C9;
+  font-weight: bold;
+}
+
+/* Testo linkato */
+.booking-checkbox a {
+  color: #3BD2C9;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.booking-checkbox a:hover {
+  color: #2cb0a8;
+}
 
 
 
