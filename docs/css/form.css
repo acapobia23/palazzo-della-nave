@@ -469,7 +469,10 @@ h1, h2, h3, h4, h5, h6, a, button {
   transform: rotate(180deg);
 }
 
-/* CHECK-BOX */
+.inline-icon {
+  height: 2em;
+  vertical-align: -0.15em;
+}/* CHECK-BOX */
 
 .booking-checkbox {
   display: flex;
