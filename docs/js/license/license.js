@@ -69,6 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <input type="email" id="email" placeholder="example@email.com">
         <input type="tel" id="phone" placeholder="+39 123 456 7890">
         <textarea id="optional-request" placeholder="Optional Request"></textarea>
+        <label class="booking-checkbox">
+          <input type="checkbox" id="consent" required>
+          <span class="checkmark"></span>
+          <a href="#">Accetto i termini sulla gestione dei dati</a>
+        </label>
+        <p id="consent-error" class="error-text hidden">* Devi accettare per continuare</p>
         <button type="submit" class="check-btn">Send and chat via WhatsApp</button>
         <div><p></p></div>
         <button type="button" id="submit-email" class="check-btn">Send via email</button>
@@ -185,6 +191,20 @@ document.addEventListener("DOMContentLoaded", function () {
     arrowIcon.classList.add(isVisible ? "arrow-down" : "arrow-up");
   });
 });
+
+document.getElementById("booking-form").addEventListener("submit", function (e) {
+  const consent = document.getElementById("consent");
+  const error = document.getElementById("consent-error");
+
+  if (!consent.checked) {
+    e.preventDefault(); // blocca invio
+    error.classList.remove("hidden"); // mostra errore
+    consent.focus();
+  } else {
+    error.classList.add("hidden"); // nascondi errore se ok
+  }
+});
+
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   const toggleBtn = document.getElementById("toggle-attribution");
